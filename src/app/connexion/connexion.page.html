@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+        <ion-title>Liste des médecins</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid style="height: 100%;">
+      <ion-row justify-content-center align-item-center style="height: 60%;"></ion-row>
+      <ion-row justify-content-center align-item-center style="height: 100%;">
+        <ion-col size="10" offset="1">
+          <ion-card ion-text-center>
+            <ion-card-content>
+              <div padding>
+                <ion-item>
+                  <ion-input name="ident" type="text" placeholder="identifiant" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="password" type="password" placeholder="mot de passe" ngModel required></ion-input>
+                </ion-item>
+              </div>
+              <div padding>
+                <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

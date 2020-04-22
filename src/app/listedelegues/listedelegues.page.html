@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+        <ion-title>Liste des délégués</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let delegue of lesDelegues" [routerLink]="'/detaildelegue/' + delegue.id">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        {{ delegue.prenom }} {{ delegue.nom }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

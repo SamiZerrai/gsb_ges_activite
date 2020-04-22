@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+        <ion-title>Liste Visite medecin </ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let visite of LesVisites">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-label>
+        {{ visite.libelle }} {{ visite.nom }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
