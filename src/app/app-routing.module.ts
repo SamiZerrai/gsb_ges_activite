@@ -31,6 +31,26 @@ const routes: Routes = [
     path: 'connexion',
     loadChildren: () => import('./connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
+  {
+    path: 'listetypecadeaux',
+    loadChildren: () => import('./listetypecadeaux/listetypecadeaux.module').then( m => m.ListetypecadeauxPageModule)
+  },
+  {
+    path: 'listetypeformation',
+    loadChildren: () => import('./listetypeformation/listetypeformation.module').then( m => m.ListetypeformationPageModule)
+  },
+  {
+    path: 'listetyperemboursement',
+    loadChildren: () => import('./listetyperemboursement/listetyperemboursement.module').then( m => m.ListetyperemboursementPageModule)
+  },
+  {
+    path: 'remboursementdeleguemedical',
+    loadChildren: () => import('./remboursementdeleguemedical/remboursementdeleguemedical.module').then( m => m.RemboursementdeleguemedicalPageModule)
+  },
+  {
+    path: 'remboursementdeleguemedicalperiode',
+    loadChildren: () => import('./remboursementdeleguemedicalperiode/remboursementdeleguemedicalperiode.module').then( m => m.RemboursementdeleguemedicalperiodePageModule)
+  },
 ];
 
 @NgModule({

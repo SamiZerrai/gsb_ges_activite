@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { Delegue } from '../models/delegue'
-import { Medecin } from '../models/medecin'
-import { Visite } from '../models/visite'
+import { Delegue } from '../models/delegue';
+import { Medecin } from '../models/medecin';
+import { Visite } from '../models/visite';
+import { TypeCadeau } from '../models/type-cadeau';
+import { TypeFormation } from '../models/type-formation';
+import { TypeRemboursement } from '../models/type-remboursement';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +65,30 @@ export class ApirestService {
     .pipe(
       tap(res => console.log('lecture des visites OK' + res)),
       catchError(this.handleError<Visite[]>('lecture des visites', []))
+    );
+  }
+
+  public getTypeCadeauListe(): Observable<TypeCadeau[]> {
+    return this.http.get<TypeCadeau[]>(this.apiURL + 'cadeau')
+    .pipe(
+      tap(res => console.log('lecture des Cadeau OK' + res)),
+      catchError(this.handleError<TypeCadeau[]>('lecture des Cadeau', []))
+    );
+  }
+
+  public getTypeFormationListe(): Observable<TypeFormation[]> {
+    return this.http.get<TypeFormation[]>(this.apiURL + 'formation')
+    .pipe(
+      tap(res => console.log('lecture des formation OK' + res)),
+      catchError(this.handleError<TypeFormation[]>('lecture des formation', []))
+    );
+  }
+
+  public getTypeRemboursementListe(): Observable<TypeRemboursement[]> {
+    return this.http.get<TypeRemboursement[]>(this.apiURL + 'remboursements')
+    .pipe(
+      tap(res => console.log('lecture des remboursement OK' + res)),
+      catchError(this.handleError<TypeRemboursement[]>('lecture des remboursement', []))
     );
   }
 
